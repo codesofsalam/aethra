@@ -50,24 +50,24 @@ const Expanding = () => {
       </div>
 
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-pulse delay-700" />
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 md:w-96 md:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 md:w-96 md:h-96 bg-teal-500/10 rounded-full blur-3xl animate-pulse delay-700" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4">
-        <div className="pt-20 pb-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="pt-16 md:pt-20 pb-24 md:pb-32">
           <div className="flex items-center mb-6">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-teal-400" />
-            <span className="mx-4 text-teal-400 text-sm font-medium tracking-wider flex items-center">
+            <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-teal-400" />
+            <span className="mx-4 text-teal-400 text-xs sm:text-sm font-medium tracking-wider flex items-center">
               <Sparkles className="w-4 h-4 mr-2 animate-pulse" />
               MARKET POTENTIAL
             </span>
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-teal-400" />
+            <div className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-teal-400" />
           </div>
 
           <div className="relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 to-blue-500 rounded-lg blur opacity-30" />
-            <h1 className="relative text-4xl md:text-6xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-teal-200">
+            <h1 className="relative text-3xl sm:text-4xl md:text-6xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-teal-200">
               Expanding the
               <br />
               Horizons of Workforce
@@ -77,7 +77,7 @@ const Expanding = () => {
           </div>
         </div>
 
-        <div className="absolute top-20 md:right-60 w-40 md:w-48">
+        <div className="absolute top-12 md:top-20 right-12 md:right-60 w-28 md:w-48">
           <img
             src="/character.png"
             alt="Astronaut"
@@ -86,32 +86,36 @@ const Expanding = () => {
         </div>
 
         <div className="relative mt-8">
-          <div className="absolute w-[95%] left-[2.5%] border-t border-dashed border-gray-600/50 top-0 mt-8" />
+          <div className="absolute w-[90%] left-[5%] border-t border-dashed border-gray-600/50 top-0 mt-8" />
 
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className={`absolute ${stat.position} top-7 text-center group transform transition-transform duration-300 hover:scale-110`}
-            >
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-teal-500 to-blue-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition duration-300" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="group relative text-center transform transition-transform duration-300 hover:scale-105"
+              >
                 <div className="relative">
-                  <div className="flex justify-center mb-4">{stat.icon}</div>
-                  <p className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-200">
-                    {stat.value}
-                  </p>
-                  <p className="text-sm font-medium text-gray-300">
-                    {stat.label}
-                  </p>
-                  <span className="text-sm text-gray-400">{stat.subtext}</span>
+                  <div className="absolute -inset-4 bg-gradient-to-r from-teal-500 to-blue-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition duration-300" />
+                  <div className="relative">
+                    <div className="flex justify-center mb-4">{stat.icon}</div>
+                    <p className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-200">
+                      {stat.value}
+                    </p>
+                    <p className="text-xs sm:text-sm font-medium text-gray-300">
+                      {stat.label}
+                    </p>
+                    <span className="text-xs sm:text-sm text-gray-400">
+                      {stat.subtext}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 z-10 px-8">
+      <div className="absolute bottom-0 left-0 right-0 z-10 px-4 sm:px-8">
         <div className="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
       </div>
     </div>

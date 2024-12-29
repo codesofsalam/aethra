@@ -23,7 +23,7 @@ const Footer = () => {
               href="mailto:team@galaxium.work"
               className="group flex items-center hover:text-teal-400 transition-colors"
             >
-              <span>team@galaxium.work</span>
+              <span>abdulsalam@galaxium</span>
               <Send className="w-3 h-3 ml-1 transform -rotate-45 opacity-0 group-hover:opacity-100 transition-all" />
             </a>
           </div>
