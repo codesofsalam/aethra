@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import { ChevronRight, ChevronLeft, Sparkles, Calendar } from "lucide-react";
 
 const Highlights = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -7,7 +7,7 @@ const Highlights = () => {
   const highlights = [
     {
       id: 1,
-      image: "/futureai.png",
+      image: "/futureai.jpg",
       date: "November 25, 2024",
       title: "The Future of AI in Workforce Management",
       description:
@@ -15,18 +15,11 @@ const Highlights = () => {
     },
     {
       id: 2,
-      image: "/blockchain.png",
+      image: "/blockchain.jpg",
       date: "November 23, 2024",
       title: "Blockchain: Securing the Future of Work",
       description:
         "How blockchain technology ensures transparent, secure, and efficient workforce management systems.",
-    },
-    {
-      id: 3,
-      image: "/api/placeholder/600/400",
-      date: "November 20, 2024",
-      title: "Revolutionizing Workforce Management",
-      description: "New approaches to managing modern workforce challenges.",
     },
   ];
 
@@ -43,45 +36,71 @@ const Highlights = () => {
   };
 
   return (
-    <div className="bg-[#020617] min-h-screen p-6 sm:p-8">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-white text-xl sm:text-2xl mb-8 ml-6 sm:ml-10">
-          Highlights
-        </h2>
+    <div className="relative bg-slate-900 min-h-screen p-8 overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-pulse delay-700" />
+      </div>
 
-        <div className="relative">
-          <div className="overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="mb-16">
+          <div className="flex items-center mb-6">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-teal-400" />
+            <span className="mx-4 text-teal-400 text-sm font-medium tracking-wider flex items-center">
+              <Sparkles className="w-4 h-4 mr-2 animate-pulse" />
+              LATEST HIGHLIGHTS
+            </span>
+            <div className="h-px w-12 bg-gradient-to-l from-transparent to-teal-400" />
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-teal-200">
+            Industry Insights
+          </h2>
+        </div>
+
+        <div className="relative px-4">
+          <div className="overflow-hidden rounded-2xl">
             <div
-              className="flex transition-transform duration-300"
+              className="flex transition-transform duration-500 ease-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {highlights.map((item) => (
-                <div
-                  key={item.id}
-                  className="w-full sm:w-1/2 flex-shrink-0 px-3"
-                >
-                  <div className="bg-[#131B2E] overflow-hidden group rounded-lg shadow-lg">
-                    <div className="relative">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-48 sm:w-[240px] sm:h-[240px] mx-auto object-cover"
-                      />
-                    </div>
+                <div key={item.id} className="w-full flex-shrink-0 px-4">
+                  <div className="group relative">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 to-blue-500 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-300" />
+                    <div className="relative bg-slate-800/50 backdrop-blur-lg rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                      <div className="relative overflow-hidden">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
 
-                    <div className="p-4 sm:p-6">
-                      <p className="text-gray-400 text-xs sm:text-sm mb-2">
-                        {item.date}
-                      </p>
-                      <h3 className="text-white text-lg sm:text-xl font-semibold mb-3 group-hover:text-teal-400 transition-colors">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-400 text-xs sm:text-sm mb-4">
-                        {item.description}
-                      </p>
-                      <button className="text-teal-400 text-xs sm:text-sm hover:text-teal-300 transition-colors">
-                        Read More →
-                      </button>
+                      <div className="p-8">
+                        <div className="flex items-center mb-4">
+                          <Calendar className="w-4 h-4 text-teal-400 mr-2" />
+                          <p className="text-teal-400 text-sm font-medium">
+                            {item.date}
+                          </p>
+                        </div>
+
+                        <h3 className="text-white text-2xl font-bold mb-4 group-hover:text-teal-400 transition-colors duration-300">
+                          {item.title}
+                        </h3>
+
+                        <p className="text-gray-400 text-base mb-6 line-clamp-2">
+                          {item.description}
+                        </p>
+
+                        <button className="inline-flex items-center text-teal-400 font-medium group/button hover:text-teal-300 transition-colors duration-300">
+                          <span className="group-hover/button:mr-2 transition-all duration-300">
+                            Read More
+                          </span>
+                          <ChevronRight className="w-4 h-4 opacity-0 -ml-4 group-hover/button:opacity-100 group-hover/button:ml-0 transition-all duration-300" />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -92,27 +111,42 @@ const Highlights = () => {
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
-            className={`absolute left-2 top-1/2 -translate-y-1/2 w-8 sm:w-10 h-8 sm:h-10 rounded-full flex items-center justify-center transition-all
+            className={`absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300
               ${
                 currentIndex === 0
-                  ? "bg-black/30 cursor-not-allowed"
-                  : "bg-black/50 hover:bg-black/70 cursor-pointer"
-              }`}
+                  ? "bg-slate-800/30 cursor-not-allowed"
+                  : "bg-slate-800/50 hover:bg-teal-400/20 hover:border-teal-400 cursor-pointer"
+              } border border-slate-700 backdrop-blur-sm`}
           >
-            <ChevronLeft className="w-5 sm:w-6 h-5 sm:h-6 text-white" />
+            <ChevronLeft className="w-6 h-6 text-white" />
           </button>
+
           <button
             onClick={nextSlide}
             disabled={currentIndex >= highlights.length - 1}
-            className={`absolute right-2 top-1/2 -translate-y-1/2 w-8 sm:w-10 h-8 sm:h-10 rounded-full flex items-center justify-center transition-all
+            className={`absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300
               ${
                 currentIndex >= highlights.length - 1
-                  ? "bg-black/30 cursor-not-allowed"
-                  : "bg-black/50 hover:bg-black/70 cursor-pointer"
-              }`}
+                  ? "bg-slate-800/30 cursor-not-allowed"
+                  : "bg-slate-800/50 hover:bg-teal-400/20 hover:border-teal-400 cursor-pointer"
+              } border border-slate-700 backdrop-blur-sm`}
           >
-            <ChevronRight className="w-5 sm:w-6 h-5 sm:h-6 text-white" />
+            <ChevronRight className="w-6 h-6 text-white" />
           </button>
+        </div>
+
+        <div className="flex justify-center mt-8 gap-2">
+          {highlights.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                currentIndex === index
+                  ? "w-8 bg-teal-400"
+                  : "bg-gray-600 hover:bg-gray-500"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </div>
