@@ -35,18 +35,19 @@ function Newsletter() {
         <div className="relative w-full max-w-lg group">
           <div className="absolute -inset-0.5 bg-gradient-to-r from-teal-500 to-blue-500 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
 
-          <div className="relative flex w-full bg-slate-900 rounded-lg p-1">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-              <Mail className="w-5 h-5 text-gray-400" />
+          <div className="relative flex flex-wrap w-full bg-slate-900 rounded-lg p-1">
+            <div className="relative flex-1">
+              <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                <Mail className="w-5 h-5 text-gray-400" />
+              </div>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="w-full p-4 pl-12 bg-slate-900 rounded-t-lg md:rounded-l-lg md:rounded-tr-none focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50 transition-all duration-300 placeholder-gray-500"
+              />
             </div>
 
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="flex-1 p-4 pl-12 bg-slate-900 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50 transition-all duration-300 placeholder-gray-500"
-            />
-
-            <button className="flex items-center px-6 py-4 bg-gradient-to-r from-teal-400 to-teal-500 hover:from-teal-500 hover:to-teal-600 text-gray-900 font-medium rounded-lg transition-all duration-300 group/button">
+            <button className="w-full md:w-auto flex items-center justify-center px-6 py-4 bg-gradient-to-r from-teal-400 to-teal-500 hover:from-teal-500 hover:to-teal-600 text-gray-900 font-medium rounded-b-lg md:rounded-r-lg md:rounded-bl-none transition-all duration-300 group/button">
               <span className="mr-2">Subscribe</span>
               <SendHorizontal className="w-4 h-4 transform group-hover/button:translate-x-1 transition-transform duration-300" />
             </button>
