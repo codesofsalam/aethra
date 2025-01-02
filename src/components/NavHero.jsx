@@ -68,7 +68,7 @@ const NavHero = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-teal-200">
             Next Gen
             <br />
-            Staffing Platform
+            Workforce Platform
           </h1>
 
           <div className="relative mb-12">
