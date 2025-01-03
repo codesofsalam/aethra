@@ -13,7 +13,8 @@ Galaxium is a web platform designed to optimize workforce management using AI an
 
 ### Prerequisites
 
-Make sure you have Node.js installed. You can download it from [here](https://nodejs.org/).
+- Node.js
+- npm
 
 ### Installation
 
